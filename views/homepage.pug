@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .page-wrapper
+      h1 Custom Object Table
+
+      a.page-action(href="/update-cobj") Add/Update this table
+
+      table
+        thead
+          tr
+            th Name
+            th Make
+            th Color
+        tbody
+          each v in vehicles
+            tr
+              td= (v.properties && v.properties.name) ? v.properties.name : ''
+              td= (v.properties && v.properties.make) ? v.properties.make : ''
+              td= (v.properties && v.properties.color) ? v.properties.color : ''
