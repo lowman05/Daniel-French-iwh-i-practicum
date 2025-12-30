@@ -1,58 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body, * {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Page layout */
 h1 {
-    margin: 1rem;
+  margin: 1.5rem 1rem 0.75rem;
 }
 
-.cards {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.page-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
 }
 
-.card {
-    flex-basis: 31%;
-    margin: 1rem 0.4rem;
-    padding: 1rem 0.4rem 2.5rem 0.4rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
+/* Links */
+a {
+  color: inherit;
+  text-decoration: underline;
 }
 
-.card__email {
-    font-size: 1rem;
+a:hover {
+  text-decoration: none;
 }
 
+/* Top action link on homepage */
+.page-action {
+  display: inline-block;
+  margin: 0 1rem 1rem;
+  font-size: 1rem;
+}
+
+/* Table (homepage) */
+table {
+  width: calc(100% - 2rem);
+  margin: 0 1rem 2rem;
+  border-collapse: collapse;
+  border: solid 1px lightgrey;
+  border-radius: 12px;
+  overflow: hidden; /* keeps rounded corners on header */
+  box-shadow: 3px 2px 6px lightgrey;
+  background: #fff;
+}
+
+thead th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-bottom: solid 1px lightgrey;
+  background: #f6f6f6;
+}
+
+tbody td {
+  padding: 0.75rem;
+  border-bottom: solid 1px #eeeeee;
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Form wrapper (updates page) */
 .form-wrapper {
-    font-size: 18px;
-    max-width: 768px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
+  font-size: 18px;
+  max-width: 768px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: solid 1px lightgrey;
+  border-radius: 15px;
+  box-shadow: 3px 2px 6px lightgrey;
+  background: #fff;
 }
 
 label, input {
-    margin-top: 5px;
-    display: block;
-    font-size: inherit;
+  margin-top: 8px;
+  display: block;
+  font-size: inherit;
 }
 
 input[type="text"] {
-    padding: .25rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: solid 1px lightgrey;
+  border-radius: 8px;
 }
 
-input[type="submit"] {
-    background-color: lightgrey;
-    border: none;
-    padding: .375rem 1rem;
-    margin-top: 10px;
+input[type="submit"], button[type="submit"] {
+  background-color: lightgrey;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  margin-top: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+  filter: brightness(0.95);
+}
+
+/* (Optional) hide the old card UI styles if not used */
+.cards, .card, .card__email {
+  display: none;
 }

@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .page-wrapper
+      h1= title
+
+      a(href="/") Return to the homepage
+
+      .form-wrapper
+        form(action="/update-cobj" method="POST")
+          div
+            label(for="name") Name
+            input#name(type="text" name="name" required)
+
+          div
+            label(for="make") Make
+            input#make(type="text" name="make" required)
+
+          div
+            label(for="color") Color
+            input#color(type="text" name="color" required)
+
+          button(type="submit") Submit
